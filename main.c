@@ -62,33 +62,20 @@ int inserirTemperatura(int temperatura){
 
 int inserirEnergia(int energia){
     printf("Digite a porcentagem de energia (de 0 a 100): \n"); 
-    if(scanf("%d", &energia) != 1) {
-        /* clear invalid input */
-        energia = -1;
-        int c; while((c = getchar()) != '\n' && c != EOF);
-    }
+    scanf("%d", &energia);
     while(energia < 0 || energia > 100){
         printf("Valor invalido, tente novamente.\n");
-        if(scanf("%d", &energia) != 1) {
-            energia = -1;
-            int c; while((c = getchar()) != '\n' && c != EOF);
-        }
+        scanf("%d", &energia);
     }
     return energia;
 }
 
 int inserirComunicacao(int comunicacao){
     printf("Digite o status da comunicacao (0 e falha e 1 e normal): \n"); 
-    if(scanf("%d", &comunicacao) != 1) {
-        comunicacao = -1;
-        int c; while((c = getchar()) != '\n' && c != EOF);
-    }
+    scanf("%d", &comunicacao);
     while(comunicacao != 0 && comunicacao != 1){
         printf("Valor invalido, tente novamente.\n");
-        if(scanf("%d", &comunicacao) != 1) {
-            comunicacao = -1;
-            int c; while((c = getchar()) != '\n' && c != EOF);
-        }
+        scanf("%d", &comunicacao);
     }
     printf("Pressione Enter para continuar...\n");
     setbuf(stdin, NULL);
